@@ -122,11 +122,12 @@
 // let r = []
 // let c = []
 // let n = 10
-
+//
 // function setup() {
 //   createCanvas(800, 800)
 //   strokeWeight(5)
-//   background(220)
+//    stroke('orange')
+//   background(0)
 //   for (let i = 0; i < n; i++) {
 //     theta.push(random(0, 2 * PI))
 //     dir.push([-1, 1][round(random(1))])
@@ -134,9 +135,9 @@
 //     c.push(createVector(400, 400))
 //   }
 // }
-
+//
 // function draw() {
-//     fill(220, 220, 220, 10)
+//     fill(0, 0, 0, 20)
 //     rect(0, 0, width, height)
 //     for (let i = 0; i < n; i++) {
 //       theta[i] = theta[i] + PI / 100 * dir[i]
@@ -155,7 +156,7 @@
 // let r = []
 // let c = []
 // let n = 100
-
+//
 // function setup() {
 //   createCanvas(800, 800)
 //   background(220)
@@ -168,7 +169,7 @@
 //     c.push(createVector(400, 400))
 //   }
 // }
-
+//
 // function draw() {
 //     fill(0, 0, 0, 5)
 //     rect(0, 0, width, height)
@@ -189,24 +190,24 @@ let dir = []
 let r = []
 let rdir = []
 let c = []
-let n = 100
+let n = 1000
 
 function setup() {
-  createCanvas(800, 800)
-  background(220)
-  strokeWeight(3)
+  createCanvas(1800, 1800)
+  background(0)
+  strokeWeight(4)
   stroke(255, 100, 255)
   for (let i = 0; i < n; i++) {
-    theta.push(random(0, 2 * PI))
+    theta.push(random(0, 3 * PI))
     dir.push(1)
-    r.push(random(30, 380))
+    r.push(random(30, 500))
     rdir.push(1)
-    c.push(createVector(400, 400))
+    c.push(createVector(900, 475))
   }
 }
 
 function draw() {
-  fill(0, 0, 0, 5)
+  fill(0, 0, 0, 10)
   noStroke();
   rect(0, 0, width, height)
   for (let i = 0; i < n; i++) {
@@ -221,7 +222,7 @@ function draw() {
 }
 
 function checkr(rdir, r) {
-  if (rdir==1 && r > 380) {
+  if (rdir==1 && r > 500) {
     rdir = -1
   }
   if (rdir==-1 && r < 0) {
