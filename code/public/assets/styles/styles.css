@@ -1,0 +1,96 @@
+@import "colors.css";
+
+@font-face {
+    font-family: "Saira";
+    src: url('../font/SairaSemiCondensed-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Saira-bold";
+    src: url('../font/SairaSemiCondensed-Bold.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--bg);
+}
+
+.sidebar-icon{
+    position: absolute;
+    width: 5rem;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border .9s ease, background-color .9s ease, transform .9s ease;
+    border-right: 2px solid var(--bg);
+    border-left: 2px dashed var(--bg);
+}
+
+.sidebar-icon:hover {
+    border-right: 2px solid #28292c;
+    cursor: pointer;
+    background-color: var(--sidebar-bg);
+}
+
+.sidebar-icon:hover .arrow-svg{
+    opacity: 100;
+    cursor: pointer;
+}
+
+.arrow-svg{
+    color: var(--font);
+    opacity: 0;
+    transition: opacity .9s ease, transform .9s ease;
+}
+
+.sidebar{
+    background-color: var(--sidebar-bg);
+    position: absolute;
+    top: 0;
+    left: -20rem;
+    width: 20rem;
+    height: 100vh;
+    transition: transform .9s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar h2{
+    font-family: "Saira-bold", sans-serif;
+    font-size: 1.9rem;
+    color: var(--font);
+}
+
+.show{
+    transform: translateX(20rem);
+}
+
+.open{
+    transform: translateX(20rem);
+    border-right: 2px solid var(--font);
+    cursor: pointer;
+    background-color: var(--sidebar-bg);
+    border-left: 2px dashed var(--font);
+}
+
+.opened{
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+.hidden{
+    display: none;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}

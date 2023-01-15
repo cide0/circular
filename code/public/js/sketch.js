@@ -190,28 +190,28 @@ let dir = []
 let r = []
 let rdir = []
 let c = []
-let n = 1000
+let n = 10
 
 function setup() {
   createCanvas(1800, 1800)
   background(0)
-  strokeWeight(4)
+  strokeWeight(10)
   stroke(255, 100, 255)
   for (let i = 0; i < n; i++) {
     theta.push(random(0, 3 * PI))
     dir.push(1)
-    r.push(random(30, 500))
+    r.push(random(30, 380))
     rdir.push(1)
     c.push(createVector(900, 475))
   }
 }
 
 function draw() {
-  fill(0, 0, 0, 10)
+  fill(0, 0, 0, 4)
   noStroke();
   rect(0, 0, width, height)
   for (let i = 0; i < n; i++) {
-    stroke(255, 100, 255)
+    stroke('orange');
     theta[i] = theta[i] + PI / 100 * dir[i]
     rdir[i] = checkr(rdir[i], r[i])
     r[i] = r[i] + rdir[i]
@@ -222,7 +222,7 @@ function draw() {
 }
 
 function checkr(rdir, r) {
-  if (rdir==1 && r > 500) {
+  if (rdir==1 && r > 380) {
     rdir = -1
   }
   if (rdir==-1 && r < 0) {
