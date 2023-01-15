@@ -7,7 +7,6 @@
     <link rel="icon" href="assets/icons/favicon.png">
     <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
     <script src="js/libs/p5.js%201.2.0.js"></script>
-    <script src="js/libs/p5.sounds.min.js"></script>
     <script type="module" src="js/app.js" defer></script>
 </head>
 <body>
@@ -16,9 +15,13 @@
 </div>
 <div class="sidebar" id="sidebar">
     <h2>Settings</h2>
+    <div class="settings-item">
+        <label for="preset-st">Preset:</label>
+        <select class="preset-st" id="preset-st">
+            <option value="1">Default</option>
+            <option value="2">Portal</option>
+        </select>
+    </div>
 </div>
-<script src="js/sketch.js"></script>
 </body>
-
-
 </html>

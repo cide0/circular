@@ -1,8 +1,5 @@
-import { DomParser} from "../util/DomParser.js";
-
 export class Sidebar{
-    constructor(){
-        let domParser = new DomParser();
+    constructor(domParser){
         this.sidebar = domParser.getByID('sidebar');
         this.sidebar_icon = domParser.getByID('sidebar-icon');
         this.arrow_svg = domParser.getByID('arrow-svg');

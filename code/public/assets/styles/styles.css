@@ -63,12 +63,49 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.settings-item{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .sidebar h2{
     font-family: "Saira-bold", sans-serif;
     font-size: 1.9rem;
     color: var(--font);
+}
+
+.sidebar label{
+    font-family: "Saira", sans-serif;
+    color: var(--font);
+    font-size: 1.2rem;
+}
+
+.preset-st{
+    background-color: var(--bg);
+    border: 1px solid var(--font);
+    color: var(--font);
+    font-size: 0.9rem;
+    width: 6rem;
+    height: 1.7rem;
+}
+
+.preset-st:focus{
+    outline: none;
+    box-shadow: none;
 }
 
 .show{
