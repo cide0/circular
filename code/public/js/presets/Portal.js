@@ -1,26 +1,19 @@
 import {Model} from "./Model.js";
 
 export class Portal extends Model{
-
-    theta = []
-    dir = []
-    r = []
-    rdir = []
-    c = []
-
     constructor(quantity){
         super(quantity);
     }
 
     reset(){
         this.resetCanvas();
-        strokeWeight(0.1)
+        strokeWeight(3)
         for (let i = 0; i < this.quantity; i++) {
             this.theta.push(random(0, 3 * PI))
             this.dir.push(1)
-            this.r.push(random(30, 380))
+            this.r.push(random(1, 380))
             this.rdir.push(1)
-            this.c.push(createVector(900, 475))
+            this.c.push(createVector(this.positionX, this.positionY))
         }
     }
 
@@ -42,10 +35,10 @@ export class Portal extends Model{
     }
 
     checkr(rdir, r) {
-        if (rdir==1 && r > 380) {
+        if (rdir===1 && r > 380) {
             rdir = -1
         }
-        if (rdir==-1 && r < 0) {
+        if (rdir===-1 && r < 0) {
             rdir = 1
         }
         return rdir

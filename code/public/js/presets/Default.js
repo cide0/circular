@@ -1,10 +1,6 @@
 import {Model} from "./Model.js";
 
 export class Default extends Model{
-    theta = []
-    dir = []
-    r = []
-    c = []
 
     constructor(quantity){
         super(quantity);
@@ -16,8 +12,8 @@ export class Default extends Model{
         for (let i = 0; i < this.quantity; i++) {
             this.theta.push(random(0, 2 * PI))
             this.dir.push([-1, 1][round(random(1))])
-            this.r.push(random(30, 380))
-            this.c.push(createVector(900, 475))
+            this.r.push(random(1, 475))
+            this.c.push(createVector(this.positionX, this.positionY))
         }
     }
 

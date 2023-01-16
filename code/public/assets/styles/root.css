@@ -1,5 +1,6 @@
 :root{
     --bg: #000;
+    --invisible: rgba(0,0,0,0);
     --font: #3c3d42;
     --sidebar-bg: rgba(96, 96, 101, 0.1);
 }

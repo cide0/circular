@@ -1,4 +1,4 @@
-@import "colors.css";
+@import "root.css";
 
 @font-face {
     font-family: "Saira";
@@ -19,6 +19,7 @@ body {
     align-items: center;
     overflow: hidden;
     background-color: var(--bg);
+    font-family: "Saira", sans-serif;
 }
 
 .sidebar-icon{
@@ -31,12 +32,12 @@ body {
     align-items: center;
     justify-content: center;
     transition: border .9s ease, background-color .9s ease, transform .9s ease;
-    border-right: 2px solid var(--bg);
-    border-left: 2px dashed var(--bg);
+    border-right: 1px solid var(--invisible);
+    border-left: 1px dashed var(--invisible);
 }
 
 .sidebar-icon:hover {
-    border-right: 2px solid #28292c;
+    border-right: 1px solid #28292c;
     cursor: pointer;
     background-color: var(--sidebar-bg);
 }
@@ -64,32 +65,30 @@ body {
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .sidebar::-webkit-scrollbar {
     display: none;
 }
 
-.sidebar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
 .settings-item{
     display: flex;
     flex-direction: row;
-    gap: 1.5rem;
     align-items: center;
+    justify-content: space-between;
+    width: 10rem;
 }
 
 .sidebar h2{
     font-family: "Saira-bold", sans-serif;
     font-size: 1.9rem;
     color: var(--font);
+    margin-bottom: 3rem;
 }
 
 .sidebar label{
-    font-family: "Saira", sans-serif;
     color: var(--font);
     font-size: 1.2rem;
 }
@@ -99,7 +98,7 @@ body {
     border: 1px solid var(--font);
     color: var(--font);
     font-size: 0.9rem;
-    width: 6rem;
+    width: 5.5rem;
     height: 1.7rem;
 }
 
@@ -108,16 +107,45 @@ body {
     box-shadow: none;
 }
 
+.sidebar hr{
+    background-color: var(--font);
+    width: 15rem;
+    height: 1px;
+    border: none;
+    margin: 1.3rem 0;
+}
+
+.settings-input{
+    background-color: var(--bg);
+    border: 1px solid var(--font);
+    color: var(--font);
+    font-size: 0.9rem;
+    width: 5rem;
+    height: 1.5rem;
+    text-align: center;
+}
+
+.settings-input:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.settings-input::-webkit-outer-spin-button,
+.settings-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .show{
     transform: translateX(20rem);
 }
 
 .open{
     transform: translateX(20rem);
-    border-right: 2px solid var(--font);
+    border-right: 1px solid var(--font);
     cursor: pointer;
     background-color: var(--sidebar-bg);
-    border-left: 2px dashed var(--font);
+    border-left: 1px dashed var(--font);
 }
 
 .opened{
