@@ -1,11 +1,9 @@
 import {DomParser} from "../util/DomParser.js";
-import {PresetSelect} from "../util/PresetSelect.js";
 
 export class Sidebar{
 
     constructor(){
         this.setAnimation();
-        this.setElements();
     }
 
     setAnimation(){
@@ -20,9 +18,5 @@ export class Sidebar{
         this.sidebar.classList.toggle('show');
         this.sidebar_icon.classList.toggle('open');
         this.arrow_svg.classList.toggle('opened');
-    }
-
-    setElements(){
-        this.presetSelect = new PresetSelect();
     }
 }

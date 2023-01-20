@@ -1,7 +1,7 @@
-import {Sidebar} from "./sidebar/Sidebar.js";
+import {Application} from "./Application.js";
 
 function init(){
-    new Sidebar();
+    new Application();
 }
 
 init();

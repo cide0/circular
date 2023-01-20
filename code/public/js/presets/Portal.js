@@ -1,8 +1,8 @@
 import {Model} from "./Model.js";
 
 export class Portal extends Model{
-    constructor(quantity){
-        super(quantity);
+    constructor(quantity, dotColor){
+        super(quantity, dotColor);
     }
 
     reset(){
@@ -23,7 +23,7 @@ export class Portal extends Model{
             noStroke();
             rect(0, 0, width, height)
             for (let i = 0; i < this.quantity; i++) {
-                stroke('purple');
+                stroke(this.dotColor);
                 this.theta[i] = this.theta[i] + PI / 100 * this.dir[i]
                 this.rdir[i] = this.checkr(this.rdir[i], this.r[i])
                 this.r[i] = this.r[i] + this.rdir[i]

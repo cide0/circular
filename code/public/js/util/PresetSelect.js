@@ -15,11 +15,11 @@ export class PresetSelect extends SidebarElement{
     changePreset(){
         let valSelected = this.getCurrentValue();
         if(valSelected === '1'){
-            this.selectedModel = new Default(200);
+            this.selectedModel = new Default(this.selectedModel.getQuantity(), this.selectedModel.getDotColor());
             this.selectedModel.reset();
         }
         else if(valSelected === '2'){
-            this.selectedModel = new Portal(600);
+            this.selectedModel = new Portal(this.selectedModel.getQuantity(), this.selectedModel.getDotColor());
             this.selectedModel.reset();
         }
     }

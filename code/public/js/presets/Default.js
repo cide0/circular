@@ -2,13 +2,13 @@ import {Model} from "./Model.js";
 
 export class Default extends Model{
 
-    constructor(quantity){
-        super(quantity);
+    constructor(quantity, dotColor){
+        super(quantity, dotColor);
     }
 
     reset(){
         this.resetCanvas()
-        strokeWeight(3)
+        strokeWeight(10)
         for (let i = 0; i < this.quantity; i++) {
             this.theta.push(random(0, 2 * PI))
             this.dir.push([-1, 1][round(random(1))])
@@ -19,11 +19,11 @@ export class Default extends Model{
 
     setDrawFn(){
         window.draw = () => {
-            fill(0, 0, 0, 5)
+            fill(0, 0, 0, 100)
             noStroke();
             rect(0, 0, width, height)
             for (let i = 0; i < this.quantity; i++) {
-                stroke('purple')
+                stroke(this.dotColor);
                 this.theta[i] = this.theta[i] + PI / 100 * this.dir[i]
                 let x = this.c[i].x + this.r[i] * cos(this.theta[i])
                 let y = this.c[i].y + this.r[i] * sin(this.theta[i])

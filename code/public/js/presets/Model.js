@@ -1,6 +1,5 @@
 export class Model{
 
-    quantity = 200;
     positionX = screen.width/2;
     positionY = screen.width/4.1;
     theta = []
@@ -9,8 +8,9 @@ export class Model{
     r = []
     c = []
 
-    constructor(quantity = 200){
+    constructor(quantity = 200, dotColor = '#3c0d82'){
         this.quantity = quantity;
+        this.dotColor = dotColor;
         this.setSetupFn();
         this.setDrawFn();
     }
@@ -36,5 +36,13 @@ export class Model{
 
     getQuantity(){
         return this.quantity;
+    }
+
+    setDotColor(dotColor){
+        this.dotColor = dotColor;
+    }
+
+    getDotColor(){
+        return this.dotColor;
     }
 }
